@@ -35,7 +35,7 @@
   padding: 0 2px;
   padding-bottom: 3px;
   margin-top: auto;
-  font-size: 18px; 
+  font-size: 17px; 
   font-weight: bold; 
 }
 
@@ -48,6 +48,15 @@
   .media {
     width: 46%;
     margin: 10px 0;
+  }
+  .subTitle {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 3px;
+    padding: 0 5px;
+    padding-bottom: 3px;
+    margin-top: auto;
   }
 }
 
@@ -62,12 +71,4 @@
   padding: 8px 0;
 }
 
-.subTitle {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding-bottom: 3px;
-  padding: 0 2px;
-  padding-bottom: 3px;
-  margin-top: auto;
-}
+

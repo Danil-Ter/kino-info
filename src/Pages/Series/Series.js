@@ -29,7 +29,7 @@ const Series = () => {
 
   return (
     <div>
-      <span className="pageTitle">Discover Series</span>
+      <span className="pageTitle">Серіали</span>
       <Genres
         type="tv"
         selectedGenres={selectedGenres}

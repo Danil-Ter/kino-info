@@ -3,14 +3,13 @@ import { img_300, unavailable } from "../../config/config";
 import "./SingleContent.css";
 import ContentModal from "../ContentModal/ContentModal";
 
-
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#00FF00", 
+      main: "#00FF00",
     },
     secondary: {
-      main: "#ff4700", 
+      main: "#ff4700",
     },
   },
 });
@@ -27,7 +26,11 @@ const SingleContent = ({
     <ThemeProvider theme={theme}>
       <ContentModal media_type={media_type} id={id}>
         <Badge
-          badgeContent={vote_average}
+          badgeContent={
+            Number.isInteger(vote_average)
+              ? vote_average
+              : vote_average.toFixed(1)
+          }
           color={vote_average > 6 ? "primary" : "secondary"}
         />
 
@@ -47,4 +50,3 @@ const SingleContent = ({
 };
 
 export default SingleContent;
-
