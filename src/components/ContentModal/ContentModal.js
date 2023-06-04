@@ -10,8 +10,9 @@ import {
   unavailableLandscape,
 } from "../../config/config";
 import "./ContentModal.css";
-import { Button } from "@material-ui/core";
+import { Button, IconButton } from "@material-ui/core";
 import YouTubeIcon from "@material-ui/icons/YouTube";
+import CloseIcon from "@material-ui/icons/Close";
 import Carousel from "../Carousel/Carousel";
 
 const useStyles = makeStyles((theme) => ({
@@ -29,6 +30,12 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(1, 1, 3),
+  },
+  closeButton: {
+    position: "absolute",
+    top: theme.spacing(1),
+    right: theme.spacing(1),
+    color: "#fff",
   },
 }));
 
@@ -93,8 +100,14 @@ export default function TransitionsModal({ children, media_type, id }) {
         <Fade in={open}>
           {content && (
             <div className={classes.paper}>
+              <IconButton
+                className={classes.closeButton}
+                onClick={handleClose}
+              >
+                <CloseIcon />
+              </IconButton>
               <div className="ContentModal">
-                <img
+              <img
                   src={
                     content.poster_path
                       ? `${img_500}/${content.poster_path}`
